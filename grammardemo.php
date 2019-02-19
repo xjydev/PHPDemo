@@ -5,18 +5,8 @@
  * Date: 2019/2/19
  * Time: 5:55 PM
  */
-include 'vardemo.php';
-function huanHang($h){
-    if (!$h){
-        $h = 1;
-    }
-    for ($i = 0;$i < $h;$i++){
-        echo '<br>';
-    }
-}
-function geli($ge){
-    echo "<br>========== $ge ==========<br>";
-}
+include 'functiondemo.php';
+
 echo "hello php";
 $a = 1;
 $b = 2;
