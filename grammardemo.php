@@ -7,6 +7,7 @@
  */
 include 'functiondemo.php';
 
+$time_start = microtime(true);
 echo "hello php";
 $a = 1;
 $b = 2;
@@ -72,3 +73,76 @@ huanHang(1);
 $timeStap = strtotime($time);
 $date = date('y-m-d',$timeStap);
 echo $date;
+$time_end = microtime(true);
+echo "$time_end - $time_start";
+geli("数组");
+$shuzu = array(1=>1,1.5,true,'zifuc','下标'=>"key");
+unset($shuzu[12]);
+$shuzu[11] = 'zifuc1.5';
+$shuzu[20] = 20;
+$shuzu[] = 30;
+$shuzu['zi']='ziti';
+$shuzu['array'] = [1,2,3,4,5];
+$shuzu['array'][1]=10;
+echo '<pre>';
+var_dump($shuzu);
+echo '</pre>';
+echo "数组个数".count($shuzu);
+$shuzucount = count($shuzu);
+echo '数组遍历';
+foreach ($shuzu as $key => $value){
+    if (is_array($value)){
+        echo $key.'<br>{';
+        foreach ($value as $k => $v){
+            echo $k.'---'.$v.' | ';
+        }
+        echo '}';
+    }
+    else {
+        echo $key.'---'.$value.' | ';
+    }
+}
+geli('list each');
+$learr = ['w'=>'w1','g'=>'g1','m'=>3];
+echo 'arr ==';
+print_r($learr);
+huanHang(1);
+$fd = array_shift($learr);
+echo "fd ==$fd <br>";
+echo 'arr === ';
+print_r($learr);
+huanHang(1);
+$uns = 'uns';
+array_unshift($learr,$uns);
+echo 'unshift === ';
+print_r($learr);
+huanHang(1);
+$pu = "push";
+array_push($learr,$pu);
+echo 'push === ';
+print_r($learr);
+huanHang(1);
+$pop = array_pop($learr);
+echo 'pop=='.$pop;
+huanHang(1);
+echo current($learr).'<br>';
+echo key($learr).'<br>';
+next($learr);
+echo 'next<br>';
+echo current($learr).'<br>';
+echo key($learr).'<br>';
+end($learr);
+echo 'end<br>';
+echo current($learr).'<br>';
+echo key($learr).'<br>';
+prev($learr);
+echo 'prev<br>';
+echo current($learr).'<br>';
+echo key($learr).'<br>';
+reset($learr);
+echo 'reset<br>';
+echo current($learr).'<br>';
+echo key($learr).'<br>';
+unset($learr);
+var_dump($learr);
+//while (list($k,$v)= each())
